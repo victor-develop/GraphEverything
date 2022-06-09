@@ -25,3 +25,6 @@ export type EditorTrait = {
   on(e: GraphEditorEvent, callback: any): void
 }
 
+export type EditorGraphLoader = {
+  loadFromGithub(url: string): void
+}
