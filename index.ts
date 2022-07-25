@@ -1,20 +1,4 @@
-/*
-Graph.ts
-*/
-export type NodeID = string
-
-export type Conn = {
-  from: NodeID,
-  to: NodeID
-}
-
-export type Node = {
-  id: NodeID,
-  name: string
-  connections: Conn[]
-}
-
-export type Graph = Node[]
+import {Node, Graph} from './Graph'
 
 /*
 Events.ts
@@ -70,5 +54,4 @@ export type EditorGraphLoader = {
   loadFromGithub(url: string): void
 }
 
-
-
+console.log('hi')
