@@ -6,9 +6,9 @@ export type Conn = {
 }
 
 export type Node = {
-  id: NodeID,
+  node_id: NodeID,
   name: string
-  connections: Conn[]
+  connections: Conn[] // every conn has a from id that equals to Node.id
 }
 
 export type Graph = Node[]
