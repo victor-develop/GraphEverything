@@ -1,3 +1,69 @@
+const schemas = {
+  'ecommerce-entities-v0': {
+    fields: {
+      properties: [
+        {
+          name: ''
+        }
+      ]
+    }
+  }
+}
+
+const field_property_schem = {
+    "type": "object",
+    "properties": {
+        "property_id": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "value": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "number"
+                }
+            ]
+        },
+        "synced_from": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "sync_to": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "property_id",
+        "type"
+    ]
+}
+
 const order = {
   entity_id: 'order',
   schema_id: 'ecommerce-entities-v0',
@@ -24,6 +90,7 @@ const order = {
     {
       field_id: 'status',
       properties: [{
+        property_id: 'field_type',
         type: 'string',
         id: false
       }]
