@@ -7,7 +7,7 @@ export type Conn = {
 
 export type Node = {
   node_id: NodeID,
-  name: string
+  name: string,
   connections: Conn[] // every conn has a from id that equals to Node.id
 }
 

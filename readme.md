@@ -10,6 +10,10 @@ General purpose graph for knowledge base.
 
 # Naming Convention
 
-Rule 1: Less isolated namespaces. More globally unique names.
+Less isolated namespaces. More globally unique names.
+
+JSON-serialization-friendly first.
+
+Underscore for fields.
 
 `xxx_id` over `id`: to avoid duplicate field names.
