@@ -1,76 +1,12 @@
-const schemas = {
-  'ecommerce-entities-v0': {
-    fields: {
-      properties: [
-        {
-          name: ''
-        }
-      ]
-    }
-  }
-}
+import { Entity } from "./entity.schema"
 
-const field_property_schem = {
-    "type": "object",
-    "properties": {
-        "property_id": {
-            "type": "string"
-        },
-        "type": {
-            "type": "string"
-        },
-        "value": {
-            "oneOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "boolean"
-                },
-                {
-                    "type": "number"
-                }
-            ]
-        },
-        "synced_from": {
-            "oneOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "null"
-                },
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "string"
-                }
-            ]
-        },
-        "sync_to": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        }
-    },
-    "required": [
-        "property_id",
-        "type"
-    ]
-}
 
-const order = {
+export const order: Entity = {
   entity_id: 'order',
   schema_id: 'ecommerce-entities-v0',
   fields: [
     {
       field_id: 'order_id',
-      schema_id: 'ecommerce-entities-v0',
       properties: [{
         property_id: 'nullable',
         type: 'boolean',
@@ -78,6 +14,7 @@ const order = {
         synced_from: null
       }, {
         property_id: 'field_type',
+        type: 'string',
         value: 'string',
         minimum: 36,
         format: 'uuid-v4',
@@ -86,19 +23,11 @@ const order = {
           'shipment.order_id.field_type'
         ]
       }]
-    },
-    {
-      field_id: 'status',
-      properties: [{
-        property_id: 'field_type',
-        type: 'string',
-        id: false
-      }]
     }
   ]
 }
 
-const shipment = {
+export const shipment: Entity = {
   entity_id: 'shipment',
   schema_id: 'ecommerce-entities-v0',
   fields: [
@@ -109,6 +38,8 @@ const shipment = {
           property_id: 'nullable',
           type: 'boolean',
           value: false,
+          synced_from: null,
+          sync_to: []
         }
       ]
     },
@@ -119,14 +50,18 @@ const shipment = {
           property_id: 'nullable',
           type: 'boolean',
           value: true,
+          synced_from: null,
+          sync_to: []
         },
         {
           property_id: 'field_type',
+          type: 'string',
           value: 'string',
           minimum: 36,
           format: 'uuid-v4',
           // key: sync info here,
-          synced_from: 'order.order_id.field_type'
+          synced_from: 'order.order_id.field_type',
+          sync_to: []
         }
       ]
     },

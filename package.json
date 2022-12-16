@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@types/node": "^18.11.15",
+    "quicktype": "^15.0.240",
+    "quicktype-core": "^6.1.0"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}

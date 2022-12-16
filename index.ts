@@ -1,3 +1,5 @@
+import { shipment } from './DataModelGraph/examples/ecom'
+import { dev } from './dev.local'
 import {Node, Graph} from './Graph'
 
 /*
@@ -54,4 +56,8 @@ export type EditorGraphLoader = {
   loadFromGithub(url: string): void
 }
 
-console.log('hi')
+
+
+console.log(JSON.stringify(shipment))
+
+dev()
